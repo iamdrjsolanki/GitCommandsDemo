@@ -1,0 +1,141 @@
+oft Corporation. All rights reserved.
+
+D:\Dhiraj\Git>git init
+Initialized empty Git repository in D:/Dhiraj/Git/.git/
+
+D:\Dhiraj\Git>git clone https://github.com/iamdrjsolanki/demo
+Cloning into 'demo'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 16 (delta 4), reused 14 (delta 3), pack-reused 0
+Unpacking objects: 100% (16/16), 2.04 KiB | 3.00 KiB/s, done.
+
+D:\Dhiraj\Git>git branch
+
+D:\Dhiraj\Git>cd demo
+
+D:\Dhiraj\Git\demo>git branch
+* master
+
+D:\Dhiraj\Git\demo>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   green.html
+        modified:   index.html
+        modified:   peach.html
+        modified:   pink.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        blue.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Dhiraj\Git\demo>git checkout -b blueBranch
+Switched to a new branch 'blueBranch'
+
+D:\Dhiraj\Git\demo>git status
+On branch blueBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   green.html
+        modified:   index.html
+        modified:   peach.html
+        modified:   pink.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        blue.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Dhiraj\Git\demo>git add .
+
+D:\Dhiraj\Git\demo>git status
+On branch blueBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   blue.html 
+        modified:   green.html
+        modified:   index.html
+        modified:   peach.html
+        modified:   pink.html 
+
+
+D:\Dhiraj\Git\demo>git commit -m 'new blue file' 
+error: pathspec 'blue' did not match any file(s) known to git
+error: pathspec 'file'' did not match any file(s) known to git
+
+D:\Dhiraj\Git\demo>git commit -m "new blue file" 
+[blueBranch 29aa17b] new blue file
+ Committer: Dhiraj Solanki <dhirajs@AD.NSEIT.COM>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 17 insertions(+)
+ create mode 100644 blue.html
+
+D:\Dhiraj\Git\demo>git status
+On branch blueBranch
+nothing to commit, working tree clean
+
+D:\Dhiraj\Git\demo>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\Dhiraj\Git\demo>git checkout blueBranch
+Switched to branch 'blueBranch'
+
+D:\Dhiraj\Git\demo>git push -u origin HEAD
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 651 bytes | 651.00 KiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+remote: 
+remote: Create a pull request for 'blueBranch' on GitHub by visiting:
+remote:      https://github.com/iamdrjsolanki/demo/pull/new/blueBranch
+remote:
+To https://github.com/iamdrjsolanki/demo
+ * [new branch]      HEAD -> blueBranch
+Branch 'blueBranch' set up to track remote branch 'blueBranch' from 'origin'.
+
+D:\Dhiraj\Git\demo>git checkout master     
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\Dhiraj\Git\demo>git pull 
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 629 bytes | 14.00 KiB/s, done.
+From https://github.com/iamdrjsolanki/demo
+   d43b236..53f140c  master     -> origin/master
+Updating d43b236..53f140c
+Fast-forward
+ blue.html  | 13 +++++++++++++
+ green.html |  1 +
+ index.html |  1 +
+ peach.html |  1 +
+ pink.html  |  1 +
+ 5 files changed, 17 insertions(+)
+ create mode 100644 blue.html
+
+D:\Dhiraj\Git\demo>  
